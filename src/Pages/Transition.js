@@ -2,7 +2,9 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 //Transition attribute
-//type of transition tween, inertia, spring
+//type of transition tween, inertia, spring, just and keyframes
+//type is defaulted to spring - tween is more controlled
+//stiffness is the springiness of the spring
 
 const Transition = () => {
   return (
@@ -23,7 +25,12 @@ const Transition = () => {
         <motion.button
           initial={{ x: "-100vw" }}
           animate={{ x: 0 }}
-          transition={{ delay: 1, duration: 1.5 }}
+          transition={{
+            delay: 1,
+            duration: 1.5,
+            type: "spring",
+            stiffness: 120,
+          }}
         >
           Transition
         </motion.button>
