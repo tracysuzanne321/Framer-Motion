@@ -106,3 +106,7 @@ li span.active::before {
 .order p {
   margin: 20px auto;
 }
+nav {
+  display: flex;
+  justify-content: space-between;
+}

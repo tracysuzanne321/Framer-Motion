@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 //type of transition tween, inertia, spring, just and keyframes
 //type is defaulted to spring - tween is more controlled
 //stiffness is the springiness of the spring
+//if it is scaling to the left, set the originX to 0
 
-const Transition = () => {
+const Hover = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -15,28 +16,24 @@ const Transition = () => {
       className="home container"
     >
       <motion.h2
-        initial={{ y: -250 }}
-        animate={{ y: 0 }}
-        transition={{ delay: 1, duration: 1.5 }}
+        whileHover={{ scale: 1.3, color: "#f8e112" }}
+        transition={{ type: "spring", stiffness: "300" }}
       >
-        Transition
+        Hover
       </motion.h2>
-      <Link to="/hover">
+      <Link to="/variants">
         <motion.button
-          initial={{ x: "-100vw" }}
-          animate={{ x: 0 }}
-          transition={{
-            delay: 1,
-            duration: 1.5,
-            type: "spring",
-            stiffness: 120,
+          whileHover={{
+            scale: 1.1,
+            textShadow: "0px 0px 8px rgb(255,255,255)",
+            boxShadow: "0px 0px 8px rgb(255,255,255)",
           }}
         >
-          Hover
+          Variants
         </motion.button>
       </Link>
     </motion.div>
   );
 };
 
-export default Transition;
+export default Hover;
